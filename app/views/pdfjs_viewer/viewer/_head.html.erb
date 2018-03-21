@@ -1,4 +1,5 @@
 <meta name="pdfjs_viewer_verbosity" content="<%= ENV.fetch("PDFJS_VIEWER_VERBOSITY", "errors") %>">
+<meta name="pdfjs_locale" content="<%= ::PdfjsViewer.pdfjs_locale.present? ? ::PdfjsViewer.pdfjs_locale : "en" %>">
 <title><%= title %></title>
 
 <%= stylesheet_link_tag "pdfjs_viewer/application", media: "all" %>

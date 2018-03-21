@@ -2,6 +2,15 @@ require "pdfjs_viewer-rails/version"
 require "pdfjs_viewer-rails/helpers"
 
 module PdfjsViewer
+  class << self
+    def setup
+      yield self
+    end
+  end
+
+  mattr_accessor :pdfjs_locale
+  @@pdfjs_locale = "en"
+
   module Rails
     class Engine < ::Rails::Engine
       isolate_namespace PdfjsViewer
